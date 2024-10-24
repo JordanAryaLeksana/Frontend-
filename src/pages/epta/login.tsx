@@ -97,6 +97,7 @@ const Login = () => {
               placeholder='Input Your Password'
               onChange={(e) => setPassword(e.target.value)}
             />
+            <Link className='text-AddsOn-neutral' href={'/epta/forgot-password'}>Forgot Password?</Link>
             {/* Center the button using mx-auto */}
             <Button
               type='submit'
