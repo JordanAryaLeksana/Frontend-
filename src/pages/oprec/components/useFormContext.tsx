@@ -6,7 +6,7 @@ export function useFileContext() {
   return useContext(FileContext);
 }
 
-export function FileProvider({ children }: any) {
+export default function FileProvider({ children }: any) {
   const [formData, setFormData] = useState({
     full_name: "",
     NRP: "",

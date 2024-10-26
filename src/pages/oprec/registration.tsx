@@ -2,7 +2,7 @@ import clsxm from "@/lib/clsxm";
 import Section1 from "./components/section1";
 import Section2 from "./components/section2";
 import Typography from "@/components/Typography/Typography";
-import { useMultistepForm } from "./components/useMultiStepForm";
+import useMultistepForm from "./components/useMultiStepForm";
 import Button from "@/components/Buttons";
 import { Formik, Form } from "formik";
 import { useRouter } from "next/navigation";
@@ -11,7 +11,7 @@ import { ref, getStorage, uploadBytes } from "firebase/storage";
 import { db, storage } from "@/lib/firebase/init";
 import * as Yup from "yup";
 import { useState } from "react";
-import { FileProvider } from "./components/useFormContext";
+import FileProvider from "./components/useFormContext";
 const registrationSchema = Yup.object().shape({
   full_name: Yup.string().required("Full name is required"),
   NRP: Yup.string()
