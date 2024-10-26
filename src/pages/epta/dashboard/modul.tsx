@@ -33,7 +33,7 @@ const Modul = () => {
       title: "Microcontroller",
       modul: "Modul Microcontroller II",
       image: "MicroModul.png",
-      file: "/modul/mikro 2.pdf"
+      file: "/modul/mikro-2.pdf"
     }
   ]
   const filteredModulData = modulData.filter(modulItem => 
