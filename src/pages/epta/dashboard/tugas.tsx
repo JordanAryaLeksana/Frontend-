@@ -5,7 +5,7 @@ import { HiOutlineDocumentText } from 'react-icons/hi'
 import { useState } from 'react'
 const Tugas = () => {
 
-  const [task, setTask] = useState(false)
+  const [task, setTask] = useState(true)
   const TaskApi = [
     { name: "Judul Tugas dan Deskripsi", type: "Microcontroller", date: "Senin,9 September 2024" },
     { name: "Judul Tugas dan Deskripsi", type: "Microcontroller", date: "Senin,9 September 2024" },
