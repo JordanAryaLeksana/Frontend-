@@ -29,12 +29,12 @@ const Modul = () => {
       image: "MicroModul.png",
       file: "/modul/mikro-1.pdf"
     },
-    // {
-    //   title: "Microcontroller",
-    //   modul: "Modul Microcontroller II",
-    //   image: "MicroModul.png",
-    //   file: "/modul/mikro 2.pdf"
-    // }
+    {
+      title: "Microcontroller",
+      modul: "Modul Microcontroller II",
+      image: "MicroModul.png",
+      file: "/modul/mikro 2.pdf"
+    }
   ]
   const filteredModulData = modulData.filter(modulItem => 
     modulList.includes(modulItem.title)
