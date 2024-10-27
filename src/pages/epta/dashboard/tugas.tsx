@@ -11,9 +11,9 @@ const Tugas = () => {
   const modulList = JSON.parse(modul || '[]');
   const [task, setTask] = useState(true)
   const taskData = [
-    { name: "Tugas 1 modul dasar pemrograman", type: "Dasar Pemrograman", date: "Jumat, 1 November 2024", file:"tugas/dasprog-1.pdf" },
-    { name: "Tugas 1 modul mikrokontroler", type: "Microcontroller", date: "Jumat, 1 November 2024", file:"tugas/mikro-1.pdf"},
-    { name: "Tugas 1 modul machine learning", type: "Machine Learning", date: "Jumat, 1 November 2024", file:"tugas/ml-1.pdf" },
+    { name: "Tugas 1 modul dasar pemrograman", type: "Dasar Pemrograman", date: "Jumat, 1 November 2024", file:"/tugas/dasprog-1.pdf" },
+    { name: "Tugas 1 modul mikrokontroler", type: "Microcontroller", date: "Jumat, 1 November 2024", file:"/tugas/mikro-1.pdf"},
+    { name: "Tugas 1 modul machine learning", type: "Machine Learning", date: "Jumat, 1 November 2024", file:"/tugas/ml-1.pdf" },
   ]
   const filteredTask = taskData.filter(modulItem => 
     modulList.includes(modulItem.type)
