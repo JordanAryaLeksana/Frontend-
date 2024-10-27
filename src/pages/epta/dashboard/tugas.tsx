@@ -30,7 +30,7 @@ const Tugas = () => {
         <Typography size='xl' variant='Paragraph' className='text-AddsOn-neutral text-2xl mb-6'>Daftar Tugas</Typography>
         {task
           ?
-          (taskData.map(({ name, type, date, file }, index) => (
+          (filteredTask.map(({ name, type, date, file }, index) => (
             <a download href={file} className='h-auto w-full rounded-3xl  border-b-[1px] border-transparent hover:border-accent-warning-500' key={index}>
               <div className='flex flex-row items-center gap-10 p-5 '>
                 <div className='w-fit h-fit p-2 bg-AddsOn-neutral rounded-full items-center justify-center'>
