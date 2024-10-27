@@ -3,15 +3,20 @@ import Typography from '@/components/Typography/Typography'
 import React from 'react'
 import { HiOutlineDocumentText } from 'react-icons/hi'
 import { useState } from 'react'
+import { useData } from '@/components/Provider/authProvider'
 const Tugas = () => {
-
+  const {userData} = useData()
+  const modul = userData?.modul?.replace(/'/g, '"') || ""
+  const modulList = JSON.parse(modul || '[]');
   const [task, setTask] = useState(true)
-  const TaskApi = [
-    { name: "Judul Tugas dan Deskripsi", type: "Microcontroller", date: "Senin,9 September 2024" },
-    { name: "Judul Tugas dan Deskripsi", type: "Microcontroller", date: "Senin,9 September 2024" },
-    { name: "Judul Tugas dan Deskripsi", type: "Microcontroller", date: "Senin,9 September 2023" },
-    { name: "Judul Tugas dan Deskripsi", type: "Microcontroller", date: "Senin,9 september 2024" },
+  const taskData = [
+    { name: "Tugas 1 modul dasar pemrograman", type: "Dasar Pemrograman", date: "Jumat, 1 November 2024", file:"tugas/dasprog-1.pdf" },
+    { name: "Tugas 1 modul mikrokontroler", type: "Microcontroller", date: "Jumat, 1 November 2024", file:"tugas/mikro-1.pdf"},
+    { name: "Tugas 1 modul machine learning", type: "Machine Learning", date: "Jumat, 1 November 2024", file:"tugas/ml-1.pdf" },
   ]
+  const filteredTask = taskData.filter(modulItem => 
+    modulList.includes(modulItem.type)
+  );
 
 
   const handleTask = () => {
@@ -25,8 +30,8 @@ const Tugas = () => {
         <Typography size='xl' variant='Paragraph' className='text-AddsOn-neutral text-2xl mb-6'>Daftar Tugas</Typography>
         {task
           ?
-          (TaskApi.map(({ name, type, date }, index) => (
-            <div className='h-auto w-full rounded-3xl  border-b-[1px] border-transparent hover:border-accent-warning-500' key={index}>
+          (taskData.map(({ name, type, date, file }, index) => (
+            <a download href={file} className='h-auto w-full rounded-3xl  border-b-[1px] border-transparent hover:border-accent-warning-500' key={index}>
               <div className='flex flex-row items-center gap-10 p-5 '>
                 <div className='w-fit h-fit p-2 bg-AddsOn-neutral rounded-full items-center justify-center'>
                   <HiOutlineDocumentText size={20} />
@@ -39,11 +44,11 @@ const Tugas = () => {
                     {type}
                   </Typography>
                   <Typography variant='Paragraph' size='xs' className='font-light text-AddsOn-neutral flex lg:justify-end  '>
-                    {date}
+                    Deadline: {date} 11.59 PM
                   </Typography>
                 </div>
               </div>
-            </div>
+            </a>
           )))
           :
           (
