@@ -27,7 +27,10 @@ const Tugas = () => {
   return (
     <DashboardLayout>
       <div className='h-full w-full lg:mt-[45px] lg:ml-[20px] ' >
+        <div className='flex flex-row justify-between w-full items-center'>
         <Typography size='xl' variant='Paragraph' className='text-AddsOn-neutral text-2xl mb-6'>Daftar Tugas</Typography>
+        <a className='text-AddsOn-neutral' href="https://its.id/m/tugas-epta">Upload tugas</a>
+        </div>
         {task
           ?
           (filteredTask.map(({ name, type, date, file }, index) => (
@@ -55,6 +58,7 @@ const Tugas = () => {
             <Typography variant='Paragraph' size='sm' className="text-primary-light-light ">Tidak Ada Daftar Tugas Yang Tersedia</Typography>
           )
         }
+        
       </div>
 
 
