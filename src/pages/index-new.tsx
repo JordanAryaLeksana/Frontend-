@@ -1,0 +1,208 @@
+import Layout from "@/components/layout/Layout";
+import { useEffect, useState } from "react";
+import {
+  BiLogoGmail,
+  BiLogoInstagram,
+  BiLogoLinkedin,
+  BiLogoWhatsapp,
+} from "react-icons/bi";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import Typography from "@/components/Typography/Typography";
+import Button from "@/components/Buttons";
+import { HiExternalLink, HiX } from "react-icons/hi";
+import { useRouter } from "next/router";
+import ParticlesBackground from "./oprec/components/ParticleBG";
+const Home = () => {
+  const bidmin = [
+    "Internet of Things",
+    "Artificial intelligence",
+    "Embedded System",
+  ];
+  const [bid, setBidmin] = useState("Internet of Things");
+  const [popup, setPopup] = useState(true);
+  const [flipped, setFlipped] = useState(false);
+  const [clipPath, setClipPath] = useState(
+    "polygon(0% 0, 55% 0, 45% 100%, 0 100%)"
+  ); // Default for desktop
+
+  useEffect(() => {
+    // Function to handle resizing and setting the appropriate clipPath
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        // For small screens (mobile)
+        setClipPath("");
+      } else if (window.innerWidth >= 640 && window.innerWidth < 1024) {
+        // For medium screens (tablet)
+        setClipPath("");
+      } else {
+        // For large screens (desktop)
+        setClipPath("polygon(0% 0, 55% 0, 45% 100%, 0 100%)");
+      }
+    };
+
+    // Attach the event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Call once to set the initial value
+    handleResize();
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  const router = useRouter();
+  const HandleClick = () => {
+    router.push("/oprec/registration");
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlipped((prevFlipped) => !prevFlipped);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setBidmin(bidmin[i]);
+      i += 1;
+      if (i === bidmin.length) {
+        i = 0;
+      }
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <Layout>
+      <Image
+        src={`/Background-Default.png`}
+        alt="background"
+        fill
+        objectFit="cover"
+        className="fixed inset-0 block"
+      />
+
+      {popup && (
+        <div className="absolute justify-center items-center bg-primary-dark-dark rounded-xl lg:top-1/2 flex  lg:m-auto w-full lg:-translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[1000px] min-w-max  lg:h-[500px] z-[99999]">
+          <div className="z-[5]">
+            <ParticlesBackground />
+          </div>
+          <div className="relative z-30 w-[90vw] lg:w-1/2 gap-5 mx-auto lg:h-full h-screen flex flex-col justify-center items-center">
+            <Image
+              src={`/OPREC-2.svg`}
+              alt="background"
+              width={500}
+              height={500}
+              layout="responsive"
+              objectFit="contain"
+            />
+            <Button
+              type="button"
+              variant="default"
+              isIcon
+              prefix={<HiExternalLink size={30} />}
+              onClick={HandleClick}
+              size="medium"
+              className="text-base text-center"
+            >
+              Register Now
+            </Button>
+            <div
+              onClick={() => setPopup(false)}
+              className="relative cursor-pointer w-16 h-16 md:hidden flex flex-row-reverse items-center justify-center rounded-full p-4 bg-white z-[1000]"
+            >
+              <HiX size={24} className="text-black" />
+            </div>
+          </div>
+
+          <div
+            onClick={() => setPopup(false)}
+            className="absolute top-4 right-4 cursor-pointer md:flex hidden flex-row-reverse items-center justify-center rounded-full p-4 bg-white z-[1000]"
+          >
+            <HiX size={24} className="text-black" />
+          </div>
+        </div>
+      )}
+
+      <div className="h-screen w-screen flex flex-col bg-primary-normal-normal justify-center items-center text-secondary-normal-normal font-Poppins">
+        <Typography
+          size="7xl"
+          variant="Header"
+          className=" font-bold mb-6 sm:text-[64px] text-[40px] "
+        >
+          ECS LABORATORY
+        </Typography>
+        <Typography
+          size="base"
+          variant="Paragraph"
+          className="font-base sm:text-md text-sm sm:flex-row justify-center items-center flex flex-col gap-5 sm:gap-3"
+        >
+          The world where we explore{" "}
+          <span className="border-[1.5px] p-2 px-4 rounded-3xl border-secondary-normal-normal">
+            <motion.span
+              key={bid}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              transition={{ duration: 1 }}
+            >
+              {bid}
+            </motion.span>
+          </span>
+        </Typography>
+        <div className="absolute left-0 bottom-24 flex flex-row gap-10 w-full h-fit items-center justify-center text-secondary-normal-normal z-[2]">
+          <Link href="https://www.linkedin.com/company/ecslaboratory/">
+            <BiLogoLinkedin className="w-[24px] h-[24px]"></BiLogoLinkedin>
+          </Link>
+          <Link href="https://www.instagram.com/ecs_epits">
+            <BiLogoInstagram className="w-[24px] h-[24px]"></BiLogoInstagram>
+          </Link>
+          <Link href="">
+            <BiLogoGmail className="w-[24px] h-[24px]"></BiLogoGmail>
+          </Link>
+          <Link href="https://wa.me/6281252219023">
+            <BiLogoWhatsapp className="w-[24px] h-[24px]"></BiLogoWhatsapp>
+          </Link>
+        </div>
+        {!popup && (
+          <motion.div className="absolute sm:right-20 sm:bottom-24 right-6 bottom-24 flex flex-row-reverse gap-10 w-full h-fit text-white">
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              animate={{ y: [0, -50, 0] }}
+              drag
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "loop",
+                repeatDelay: 0.5,
+                bounce: 0.5,
+              }}
+              onClick={() => setPopup(true)}
+              className="flex flex-col"
+            >
+              <Image
+                src={`/OPREC-1.svg`}
+                alt="background"
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="contain"
+              />
+              <div className="w-10 h-10 flex absolute -right-2 -bottom-2 text-AddsOn-gray bg-AddsOn-white rounded-full items-center justify-center">
+                <HiExternalLink size={24} />
+              </div>
+            </motion.button>
+          </motion.div>
+        )}
+      </div>
+    </Layout>
+  );
+};
+
+export default Home;
