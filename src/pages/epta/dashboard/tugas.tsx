@@ -4,6 +4,7 @@ import React from 'react'
 import { HiOutlineDocumentText } from 'react-icons/hi'
 import { useState } from 'react'
 import { useData } from '@/components/Provider/authProvider'
+import { BiUpload } from 'react-icons/bi'
 const Tugas = () => {
   const {userData} = useData()
   const modul = userData?.modul?.replace(/'/g, '"') || ""
@@ -26,10 +27,10 @@ const Tugas = () => {
 
   return (
     <DashboardLayout>
-      <div className='h-full w-full lg:mt-[45px] lg:ml-[20px] ' >
+      <div className='h-full w-full lg:mt-[45px] lg:mx-[20px] ' >
         <div className='flex flex-row justify-between w-full items-center'>
         <Typography size='xl' variant='Paragraph' className='text-AddsOn-neutral text-2xl mb-6'>Daftar Tugas</Typography>
-        <a className='text-AddsOn-neutral' href="https://its.id/m/tugas-epta">Upload tugas</a>
+        <a className='text-AddsOn-neutral' href="https://its.id/m/tugas-epta">Upload tugas <span><BiUpload></BiUpload></span></a>
         </div>
         {task
           ?
