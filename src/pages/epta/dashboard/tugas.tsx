@@ -30,7 +30,7 @@ const Tugas = () => {
       <div className='h-full w-full lg:mt-[45px] lg:mx-[20px] ' >
         <div className='flex flex-row justify-between w-full items-center'>
         <Typography size='xl' variant='Paragraph' className='text-AddsOn-neutral text-2xl mb-6'>Daftar Tugas</Typography>
-        <a className='text-AddsOn-neutral flex flex-row items-center' href="https://its.id/m/tugas-epta">Upload tugas <span><BiUpload></BiUpload></span></a>
+        <a className='text-AddsOn-neutral flex flex-row items-center gap-2' href="https://its.id/m/tugas-epta">Upload tugas <span><BiUpload></BiUpload></span></a>
         </div>
         {task
           ?
