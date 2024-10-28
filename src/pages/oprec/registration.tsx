@@ -110,7 +110,7 @@ export default function Registration() {
     <div
       className={clsxm([
         "min-h-screen w-full h-full m-auto",
-        "bg-primary-normal-normal",
+        "bg-primary-normal-normal py-10 md:py-0",
       ])}
     >
       <section className=" w-[90%] h-full min-h-screen flex flex-col justify-center items-center m-auto">
