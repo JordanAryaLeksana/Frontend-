@@ -86,7 +86,7 @@ const Home = () => {
         objectFit="cover"
         className="fixed inset-0 block"
       />
-
+{/* 
       {popup && (
         <div className="absolute justify-center items-center bg-primary-dark-dark rounded-xl lg:top-1/2 flex  lg:m-auto w-full lg:-translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[1000px] min-w-max  lg:h-[500px] z-[99999]">
           <div className="z-[5]">
@@ -127,7 +127,7 @@ const Home = () => {
             <HiX size={24} className="text-black" />
           </div>
         </div>
-      )}
+      )} */}
 
       <div className="h-screen w-screen flex flex-col bg-primary-normal-normal justify-center items-center text-secondary-normal-normal font-Poppins">
         <Typography
