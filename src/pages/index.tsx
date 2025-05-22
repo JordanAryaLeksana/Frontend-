@@ -14,7 +14,6 @@ import Button from "@/components/Buttons";
 import { HiExternalLink, HiX } from "react-icons/hi";
 import { useRouter } from "next/router";
 import ParticlesBackground from "./oprec/components/ParticleBG";
-import Section2 from "@/components/layoutpage/section2";
 const Home = () => {
   const bidmin = [
     "Internet of Things",
