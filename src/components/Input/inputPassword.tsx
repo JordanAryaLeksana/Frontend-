@@ -24,9 +24,6 @@ const InputPassword = ({
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const errorsLogic = touched[name] && errors[name] && !disabled && !readonly;
     const successLogic = touched[name] && !errors[name] && !disabled && !readonly;
-
-   
-
     return (
         <div className='mb-3'>
             <div className="w-full flex justify-between items-center gap-3 mb-2">
