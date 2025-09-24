@@ -12,6 +12,7 @@ import { db, storage } from "@/lib/firebase/init";
 import * as Yup from "yup";
 import { useState } from "react";
 import { FileProvider } from "../../components/Hooks/useFormContext";
+import Section3 from "@/components/section3";
 const registrationSchema = Yup.object().shape({
   full_name: Yup.string().required("Full name is required"),
   NRP: Yup.string()
@@ -27,6 +28,7 @@ const registrationSchema = Yup.object().shape({
   ktm: Yup.mixed().required("KTM is required"),
   transcript_gpa: Yup.mixed().required("Transcript GPA is required"),
   motivation_letter: Yup.mixed().required("Motivation Letter is required"),
+  portofolio: Yup.string().url("Invalid link").matches(/^https?:\/\/.+/).required("Portofolio is required"),
 });
 
 export default function Registration() {
@@ -61,6 +63,7 @@ export default function Registration() {
         phone_number: finalValues.phone_number,
         email: finalValues.email,
         batch: finalValues.batch,
+        portofolio: finalValues.portofolio,
       });
       setLoading(true);
       // const f = finalValues;
@@ -126,6 +129,7 @@ export default function Registration() {
             transcript_gpa: null,
             motivation_letter: null,
             statement_letter: null,
+            portofolio: "",
           }}
           validationSchema={registrationSchema}
           validateOnBlur={true}

@@ -105,6 +105,13 @@ export default function Section2({ setUploadedFile }: InputUploadProps) {
               onFileChange={setValueUtils}
               suffix={<HiUpload size={20} />}
             />
+            <Input
+            name="portofolio"
+            label="portofolio"
+            type="text"
+            placeholder="Input Your Portofolio Link"
+
+            />
           </div>
         </div>
       </div>
