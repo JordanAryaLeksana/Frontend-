@@ -22,6 +22,7 @@ const registrationSchema = Yup.object().shape({
   phone_number: Yup.string()
     .required("Phone number is required")
     .matches(/^[0-9]+$/, "Phone number must be digits only"),
+  address : Yup.string().required("Address is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
   batch: Yup.string().required("Batch is required"),
   curriculum_vitae: Yup.mixed().required("Curriculum Vitae is required"),
@@ -61,6 +62,7 @@ export default function Registration() {
         full_name: finalValues.full_name,
         NRP: finalValues.NRP,
         phone_number: finalValues.phone_number,
+        address: finalValues.address,
         email: finalValues.email,
         batch: finalValues.batch,
         portofolio: finalValues.portofolio,
@@ -122,6 +124,7 @@ export default function Registration() {
             full_name: "",
             NRP: "",
             phone_number: "",
+            address: "",
             email: "",
             batch: "",
             curriculum_vitae: null,

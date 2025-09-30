@@ -39,7 +39,15 @@ export default function Section2({ setUploadedFile }: InputUploadProps) {
             layout=""
             className="w-[70%] h-[70%]"
           />
+          {/* <Image
+          src={`/OPREC-1.svg`}
+          alt="OPREC"
+          fill
+          
+          /> */}
         </div>
+
+
         <div className="flex flex-col w-full md:flex-row gap-5">
           <div className="flex flex-col w-full">
             <Input
@@ -61,7 +69,13 @@ export default function Section2({ setUploadedFile }: InputUploadProps) {
               placeholder="Input Your Phone Number"
             />
             <Input
-              label="email"
+              label="Alamat/Domisili"
+              name="address"
+              type="text"
+              placeholder="Input Your Address"
+            />
+            <Input
+              label="Email"
               name="email"
               type="text"
               placeholder="Input Your Email"
@@ -71,8 +85,8 @@ export default function Section2({ setUploadedFile }: InputUploadProps) {
               name="batch"
               placeholder="Select Your Batch"
               options={[
-                { value: "2022", label: "2022" },
                 { value: "2023", label: "2023" },
+                { value: "2024", label: "2024" },
               ]}
             />
           </div>
@@ -107,10 +121,9 @@ export default function Section2({ setUploadedFile }: InputUploadProps) {
             />
             <Input
             name="portofolio"
-            label="portofolio"
+            label="Portofolio"
             type="text"
             placeholder="Input Your Portofolio Link"
-
             />
           </div>
         </div>

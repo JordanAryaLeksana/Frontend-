@@ -41,7 +41,7 @@ export default function Section1() {
             </span>{" "}
             <br />- Have a high commitment to being part of Embedded and
             Cyber-Physical System Laboratory assistant <br />- An active S1
-            engineering physics student batch 2022 and 2023
+            Engineering Physics student batch 2023 and 2024
           </Typography>
           <Typography
             variant="Paragraph"
@@ -52,9 +52,9 @@ export default function Section1() {
               Documents:{" "}
             </span>{" "}
             <br />- ATS friendly CV
-            <br /> - KTM <br />- academic transcript of GPA <br /> - Essay about
+            <br /> - KTM <br />- Academic transcript of GPA <br /> - Essay about
             your motivation to become Embedded  and Cyber-Physical System
-            Laboratory assistant <br />
+            Laboratory assistant <br /> - Portofolio (optional) <br/>
           </Typography>
         </div>
       </div>
