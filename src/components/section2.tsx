@@ -121,7 +121,7 @@ export default function Section2({ setUploadedFile }: InputUploadProps) {
             />
             <Input
             name="portofolio"
-            label="Portofolio"
+            label="Portofolio (opsional)"
             type="text"
             placeholder="Input Your Portofolio Link"
             />

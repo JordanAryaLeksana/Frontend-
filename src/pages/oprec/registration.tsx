@@ -29,7 +29,7 @@ const registrationSchema = Yup.object().shape({
   ktm: Yup.mixed().required("KTM is required"),
   transcript_gpa: Yup.mixed().required("Transcript GPA is required"),
   motivation_letter: Yup.mixed().required("Motivation Letter is required"),
-  portofolio: Yup.string().url("Invalid link").matches(/^https?:\/\/.+/).required("Portofolio is required"),
+  portofolio: Yup.string().url("Invalid link").matches(/^https?:\/\/.+/),
 });
 
 export default function Registration() {
